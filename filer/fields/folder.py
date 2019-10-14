@@ -76,7 +76,7 @@ class AdminFolderWidget(ForeignKeyRawIdWidget):
         try:
             key = self.rel.get_related_field().name
             obj = self.rel.model._default_manager.get(**{key: value})
-        except ObjectDoesNotExist:
+        except:
             obj = None
         return obj
 
